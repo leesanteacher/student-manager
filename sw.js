@@ -1,4 +1,4 @@
-const CACHE = 'student-manager-shell-v12';
+const CACHE = 'student-manager-shell-v13';
 const ASSETS = [
   './index.html', './styles.css', './app.js',
   './xlsx.full.min.js', './manifest.json', './icon-192.svg', './icon-512.svg',
