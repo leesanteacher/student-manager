@@ -9,15 +9,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- 앱 화면 본문: 상단 메뉴, 오늘 수업 요약, 검색 및 목록이 여기에 표시됩니다. -->
   <main class="app-shell">
     <header class="topbar">
       <div><p class="eyebrow">MINI STUDENT MANAGER</p><h1 id="pageTitle">오늘 수업</h1></div>
       <button class="icon-button" id="openAdd" aria-label="추가">＋</button>
     </header>
+    <!-- 백업 파일은 휴대폰을 바꾸거나 자료를 복원할 때 사용합니다. -->
     <section class="backup-panel" aria-label="데이터 파일 백업">
       <div><strong>데이터 파일 백업</strong><small>기기 변경이나 데이터 복원에 사용할 수 있어요.</small></div>
       <div class="backup-actions"><button class="secondary" id="exportData" type="button">파일로 저장</button><button class="secondary" id="importData" type="button">파일 불러오기</button><input class="hidden" id="backupFileInput" type="file" accept=".json,application/json"></div>
     </section>
+    <!-- 메뉴 버튼의 data-page 값에 따라 app.js가 화면을 바꿉니다. -->
     <nav class="main-nav">
       <button class="nav-item active" data-page="today">오늘 수업</button>
       <button class="nav-item" data-page="students">학생 관리</button>
@@ -49,6 +52,7 @@
     <div class="empty-state hidden" id="emptyState"><div>☁</div><p id="emptyText">아직 등록된 학생이 없어요.</p><button class="primary" id="emptyAdd">첫 학생 등록하기</button></div>
   </main>
 
+  <!-- 아래 창들은 학생·강사·수업을 새로 등록하거나 수정할 때 열립니다. -->
   <dialog id="studentDialog">
     <form method="dialog" id="studentForm">
       <div class="dialog-head"><h2>학생 등록</h2><button class="close" type="button" data-close="studentDialog">×</button></div>
@@ -83,6 +87,7 @@
       <div class="dialog-actions"><button class="secondary" type="button" data-close="classDialog">취소</button><button class="primary">저장하기</button></div>
     </form>
   </dialog>
+  <!-- 엑셀 읽기 도구를 먼저 불러온 뒤 앱 기능을 실행합니다. -->
   <script src="xlsx.full.min.js"></script>
   <script src="app.js"></script>
 </body>
